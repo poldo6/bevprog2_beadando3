@@ -1,23 +1,22 @@
-#ifndef JATEKTER_H
-#define JATEKTER_H
+#ifndef JATEK_MESTER_H
+#define JATEK_MESTER_H
 #include "CheckBox.h"
 #include <vector>
 
-class JatekTer
+class JatekMester
 {
     public:
-        JatekTer(int _sor, int _oszlop);
+        JatekMester(int _sor, int _oszlop);
 
-        virtual ~JatekTer();
+        virtual ~JatekMester();
 
-    static const int XX = 800;
-    static const int YY = 600;
+        void valt();
 
-    void valt();
+        void xelt(int i, int j);
 
-    void xelt(int i, int j);
+        void esemeny(event ev);
 
-    void esemeny(event ev);
+        void jatek_indit();
 
     protected:
         int sor, oszlop;
@@ -32,4 +31,4 @@ class JatekTer
     private:
 };
 
-#endif // JATEKTER_H
+#endif // JATEK_MESTER_H

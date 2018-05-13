@@ -1,6 +1,6 @@
-#include "JatekTer.h"
+#include "JatekMester.h"
 
-JatekTer::JatekTer(int _sor, int _oszlop):sor(_sor), oszlop(_oszlop)
+JatekMester::JatekMester(int _sor, int _oszlop):sor(_sor), oszlop(_oszlop)
 {
     jatekter.resize(sor);
     for(int i=0; i<sor; i++)
@@ -15,19 +15,19 @@ JatekTer::JatekTer(int _sor, int _oszlop):sor(_sor), oszlop(_oszlop)
     gout << refresh;
 }
 
-JatekTer::~JatekTer()
+JatekMester::~JatekMester()
 {
 
 }
 
-void JatekTer::valt()
+void JatekMester::valt()
 {
     soron_kovetkezo*=-1;
 }
 
-void JatekTer::xelt(int i, int j)
+void JatekMester::xelt(int i, int j)
 {
-    if(jatekter[i][j]!=0)
+    if(jatekter[i][j].ures())
     {
         //ide nem tehetsz!!!!!
     }
@@ -38,7 +38,12 @@ void JatekTer::xelt(int i, int j)
     }
 }
 
-void JatekTer::esemeny(event ev)
+void JatekMester::esemeny(event ev)
+{
+
+}
+
+void JatekMester::jatek_indit()
 {
 
 }

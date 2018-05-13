@@ -1,25 +1,8 @@
-#include "graphics.hpp"
-#include "JatekTer.h"
-
-#include <vector>
-#include <iostream>
-
-using namespace genv;
-using namespace std;
+#include "JatekMester.h"
 
 int main()
 {
-    gout.open(JatekTer::XX,JatekTer::YY);
-
-    JatekTer jt(20,15);
-    event ev;
-    while(gin >> ev && ev.keycode!=key_escape)
-    {
-        if(ev.type==ev_mouse && ev.button==btn_left)
-        {
-
-        }
-    }
-
+    JatekMester jm(20,20);
+    jm.jatek_indit();
     return 0;
 }

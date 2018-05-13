@@ -1,8 +1,6 @@
 #include "CheckBox.h"
 #include <iostream>
 
-
-
 CheckBox::CheckBox(int _x, int _y, int _sx, int _sy, int _id):Widget(_x, _y, _sx, _sy, _id)
 {
     //ctor
@@ -44,6 +42,11 @@ void CheckBox::szin_normal() const
 void CheckBox::szin_kiemelt() const
 {
     gout << color(0,0,255);
+}
+
+bool CheckBox::ures() const
+{
+    return tartalma == 0;
 }
 
 void CheckBox::set_tartalma(int _tartalma)

@@ -17,6 +17,7 @@ class CheckBox : public Widget
         void szin_normal() const;
         void szin_kiemelt() const;
 
+        bool ures() const;
         void set_tartalma(int _tartalma);
         int get_tartalma() const;
 
