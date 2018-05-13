@@ -7,7 +7,7 @@ JatekMester::JatekMester(int _sor, int _oszlop) : sor(_sor), oszlop(_oszlop)
 
 JatekMester::~JatekMester()
 {
-
+    delete kepernyo;
 }
 
 void JatekMester::valt()
@@ -32,5 +32,5 @@ void JatekMester::xelt(int i, int j)
 
 void JatekMester::jatek_indit()
 {
-
+    kepernyo->main();
 }

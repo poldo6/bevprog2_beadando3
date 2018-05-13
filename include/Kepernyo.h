@@ -23,7 +23,7 @@ protected:
     int sor, oszlop;
     vector<vector<CheckBox>> jatekter;
 
-    const int cb_meret=40;
+    const int cb_meret=25;
     const int margo_x=10;
     const int margo_y=100;
 private:

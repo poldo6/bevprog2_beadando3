@@ -30,7 +30,6 @@ Kepernyo::~Kepernyo()
 
 void Kepernyo::main()
 {
-
     event ev;
     while(gin >> ev && ev.keycode!=key_escape)
     {
