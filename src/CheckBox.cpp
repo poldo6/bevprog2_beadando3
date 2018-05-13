@@ -10,3 +10,13 @@ CheckBox::~CheckBox()
 {
     //dtor
 }
+
+void CheckBox::draw() const
+{
+
+}
+
+void CheckBox::action(event ev)
+{
+
+}

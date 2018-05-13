@@ -11,6 +11,9 @@ class CheckBox : public Widget
         CheckBox(int _x, int _y, int _sx, int _sy, int _id);
         virtual ~CheckBox();
 
+        virtual void draw() const;
+        virtual void action(event ev);
+
     protected:
         int tartalma=0;
 
