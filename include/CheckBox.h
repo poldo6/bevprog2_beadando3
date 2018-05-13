@@ -14,9 +14,15 @@ class CheckBox : public Widget
         virtual void draw() const;
         virtual void action(event ev);
 
+        void szin_normal() const;
+        void szin_kiemelt() const;
+
+        void set_tartalma(int _tartalma);
+        int get_tartalma() const;
+
     protected:
         int tartalma=0;
-
+        bool kiemelt=false;
 
     private:
 };
