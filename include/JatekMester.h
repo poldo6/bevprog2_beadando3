@@ -3,6 +3,8 @@
 
 #include "Kepernyo.h"
 
+class Kepernyo;
+
 class JatekMester
 {
 public:
@@ -18,7 +20,7 @@ protected:
     int soron_kovetkezo=-1;
 
 private:
-    Kepernyo kepernyo;
+    Kepernyo* kepernyo;
 };
 
 #endif // JATEK_MESTER_H

@@ -2,8 +2,13 @@
 
 using namespace genv;
 
-Kepernyo::Kepernyo(int _sor, int _oszlop) : sor(_sor), oszlop(_oszlop)
+Kepernyo::Kepernyo(int _sor, int _oszlop, JatekMester& _jm) : sor(_sor), oszlop(_oszlop), jm(_jm)
 {
+    // szukseges kepernyomeret kiszamitasa
+    XX = oszlop * cb_meret + 2*margo_x;
+    YY = sor * cb_meret + margo_x + margo_y;
+
+    gout.open(XX,YY);
 
     jatekter.resize(sor);
     for(int i=0; i<sor; i++)
@@ -25,7 +30,6 @@ Kepernyo::~Kepernyo()
 
 void Kepernyo::main()
 {
-    gout.open(XX,YY);
 
     event ev;
     while(gin >> ev && ev.keycode!=key_escape)
@@ -35,4 +39,9 @@ void Kepernyo::main()
 
         }
     }
+}
+
+void Kepernyo::set_jatekmester(JatekMester& _jm)
+{
+    jm = _jm;
 }

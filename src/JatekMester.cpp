@@ -1,7 +1,8 @@
 #include "JatekMester.h"
 
-JatekMester::JatekMester(int _sor, int _oszlop) : sor(_sor), oszlop(_oszlop), kepernyo(_sor,_oszlop)
+JatekMester::JatekMester(int _sor, int _oszlop) : sor(_sor), oszlop(_oszlop)
 {
+    kepernyo = new Kepernyo(_sor,_oszlop,*this);
 }
 
 JatekMester::~JatekMester()
