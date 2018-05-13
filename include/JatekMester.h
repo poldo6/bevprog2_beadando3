@@ -3,6 +3,7 @@
 
 #include "Kepernyo.h"
 
+// 'Kepernyo' does not name a type|
 class Kepernyo;
 
 class JatekMester

@@ -1,7 +1,7 @@
 #include "CheckBox.h"
 #include <iostream>
 
-CheckBox::CheckBox(int _x, int _y, int _sx, int _sy, int _id):Widget(_x, _y, _sx, _sy, _id)
+CheckBox::CheckBox(int _x, int _y, int _sx, int _sy, int _id) : Widget(_x, _y, _sx, _sy, _id)
 {
     //ctor
 }
