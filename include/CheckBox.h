@@ -14,8 +14,7 @@ public:
     virtual void draw() const;
     virtual void action(event ev);
 
-    void szin_normal() const;
-    void szin_kiemelt() const;
+    void szinez() const;
 
     bool ures() const;
     void set_tartalma(int _tartalma);

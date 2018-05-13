@@ -17,16 +17,17 @@ void JatekMester::valt()
 
 void JatekMester::xelt(int i, int j)
 {
-//    if(tartalma != 0)
-//    {
-//
-//        //ide nem tehetsz!!!!!
-//    }
-//    else
-//    {
-//        //semmit ne írjon ki
-//        jatekter[i][j].set_tartalma(soron_kovetkezo);
-//    }
+    if(kepernyo->get_tartalma(i,j) != 0)
+    {
+
+        //ide nem tehetsz!!!!!
+    }
+    else
+    {
+        //semmit ne írjon ki
+        kepernyo->set_tartalma(i,j,soron_kovetkezo);
+        valt();
+    }
 }
 
 

@@ -53,11 +53,24 @@ void Kepernyo::klikk_esemeny(event ev)
 {
     if(ev.pos_x >= x && ev.pos_x < x+sx && ev.pos_y >= y && ev.pos_y < y+sy && ev.type == ev_mouse && ev.button == btn_left)
     {
-        int i = (ev.pos_x - x) / cb_meret;
-        int j = (ev.pos_y - y) / cb_meret;
+        int i = (ev.pos_y - y) / cb_meret;
+        int j = (ev.pos_x - x) / cb_meret;
 
-        cout << i << " " << j << endl;
+        // cout << i << " " << j << endl;
+
+        jm.xelt(i,j);
+        gout << refresh;
     }
+}
+
+int Kepernyo::get_tartalma(int i, int j) const
+{
+    return jatekter[i][j].get_tartalma();
+}
+
+void Kepernyo::set_tartalma(int i, int j, int _tartalma)
+{
+    jatekter[i][j].set_tartalma(_tartalma);
 }
 
 void Kepernyo::set_jatekmester(JatekMester& _jm)

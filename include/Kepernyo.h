@@ -19,7 +19,8 @@ public:
     void klikk_esemeny(genv::event ev);
     void set_jatekmester(JatekMester& _jm);
 
-    int tartalma(int i, int j) const;
+    int get_tartalma(int i, int j) const;
+    void set_tartalma(int i, int j, int _tartalma);
 
 protected:
     int sor, oszlop;
