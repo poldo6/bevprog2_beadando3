@@ -1,5 +1,7 @@
 #include "widget.h"
 
+using namespace genv;
+
 Widget::Widget()
 {
 }
@@ -15,15 +17,6 @@ void Widget::atmeretez(int _x, int _y, int _sx, int _sy, int _id)
     sx = _sx;
     sy = _sy;
     id = _id;
-}
-
-void Widget::focus(event ev)
-{
-    if(ev.pos_x >= x && ev.pos_x < x+sx && ev.pos_y >= y && ev.pos_y < y+sy && ev.type == ev_mouse && ev.button == btn_left)
-    {
-
-    }
-
 }
 
 void Widget::szinez() const

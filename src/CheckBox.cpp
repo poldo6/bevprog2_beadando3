@@ -2,6 +2,8 @@
 #include <iostream>
 #include <cmath>
 
+using namespace genv;
+
 CheckBox::CheckBox(int _x, int _y, int _sx, int _sy, int _id) : Widget(_x, _y, _sx, _sy, _id)
 {
     //ctor
@@ -16,10 +18,7 @@ void CheckBox::draw() const
 {
     szinez();
     gout << move_to(x,y) << box(sx,sy);
-
     gout << color(0,0,0) << move_to(x+1,y+1) << box(sx-2,sy-2);
-
-    cout << "rajzol tartalma = " << tartalma << endl;
 
     szinez();
     if (tartalma>0)
@@ -40,15 +39,9 @@ void CheckBox::draw() const
             int ykiind = r*sin(alpha) + y + sy/2 + 1;
             int xveg = r*cos(alpha+dalpha) + x + sx/2 + 1;
             int yveg = r*sin(alpha+dalpha) + y + sy/2 + 1;
-
-            // cout << xkiind << " " << ykiind << " " << xveg << " " << yveg << endl;
-
             gout << move_to(xkiind,ykiind) << line_to(xveg,yveg);
         }
     }
-
-//    cout << "Belepett:" << x << "  " << y << " " << endl;
-//    cout << "S-es belepett:" << sx << "  " << sy << " " << endl;
 }
 
 void CheckBox::action(event ev)

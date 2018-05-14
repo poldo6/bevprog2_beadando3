@@ -12,6 +12,11 @@ JatekMester::~JatekMester()
     delete kepernyo;
 }
 
+void JatekMester::jatek_indit()
+{
+    kepernyo->main();
+}
+
 void JatekMester::valt()
 {
     soron_kovetkezo*=-1;
@@ -107,10 +112,4 @@ void JatekMester::xelt(int i, int j)
         teli_mezok_szama++;
         vizsgal(i,j);
     }
-}
-
-
-void JatekMester::jatek_indit()
-{
-    kepernyo->main();
 }

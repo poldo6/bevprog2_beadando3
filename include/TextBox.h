@@ -5,6 +5,8 @@
 
 #include "Widget.h"
 
+using namespace std;
+
 class TextBox : public Widget
 {
 public:
@@ -15,7 +17,7 @@ public:
     void set_szoveg(const string& _szoveg);
 
     virtual void draw() const;
-    virtual void action(event ev);
+    virtual void action(genv::event ev);
 
 protected:
     string szoveg;

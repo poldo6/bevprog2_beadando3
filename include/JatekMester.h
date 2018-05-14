@@ -12,10 +12,11 @@ public:
     JatekMester(int _sor, int _oszlop);
     virtual ~JatekMester();
 
+    void jatek_indit();
+
     void valt();
     void vizsgal(int i, int j);
     void xelt(int i, int j);
-    void jatek_indit();
 
 protected:
 

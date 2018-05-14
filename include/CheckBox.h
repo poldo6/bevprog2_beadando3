@@ -2,9 +2,6 @@
 #define CHECKBOX_H
 #include "Widget.h"
 
-using namespace std;
-using namespace genv;
-
 class CheckBox : public Widget
 {
 public:
@@ -12,7 +9,7 @@ public:
     virtual ~CheckBox();
 
     virtual void draw() const;
-    virtual void action(event ev);
+    virtual void action(genv::event ev);
 
     bool ures() const;
     void set_tartalma(int _tartalma);

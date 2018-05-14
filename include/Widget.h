@@ -4,9 +4,6 @@
 #include "graphics.hpp"
 #include <vector>
 
-using namespace std;
-using namespace genv;
-
 class Widget
 {
 protected:
@@ -25,10 +22,8 @@ public:
     void szinez() const;
     void kiemel(bool _kiemel);
 
-    void focus(event ev);
-
     virtual void draw() const = 0;
-    virtual void action(event ev) = 0;
+    virtual void action(genv::event ev) = 0;
 };
 
 #endif // WIDGET_HPP_INCLUDED
