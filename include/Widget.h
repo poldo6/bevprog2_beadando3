@@ -22,9 +22,9 @@ public:
     Widget(int _x, int _y, int _sx, int _sy, int _id);
     virtual ~Widget();
 
+    // Atmeretezi a widgetet.
     void atmeretez(int _x, int _y, int _sx, int _sy, int _id);
 
-    void szinez() const;
     void kiemel(bool _kiemel);
 
     // Ezeket a fuggvenyeket az oroklo osztalyok ujra fogjak definialni.
@@ -32,9 +32,7 @@ public:
     virtual void rajzol() const = 0;
     virtual void kezeld_az_esemenyt(genv::event ev) = 0;
 
-    // Atmeretezi a widgetet.
-    void pozicio(int x, int y, int sx, int sy);
-
+    void szinez() const;
     void szinbeallit_hatter() const;
     void szinbeallit_hatter_sotetebb() const;
     void szinbeallit_szoveg() const;
