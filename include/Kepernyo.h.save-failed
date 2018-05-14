@@ -25,7 +25,7 @@ public:
     int get_tartalma(int i, int j) const;
     void set_tartalma(int i, int j, int _tartalma);
 
-    vector<CheckBox*> mezok_irany_szerint(int i, int j, int irany_i, int irany_j);
+    vector<CheckBox&> mezok_irany_szerint(int irany_i, int irany_y)l
 
 protected:
     int sor, oszlop;

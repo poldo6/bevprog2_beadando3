@@ -14,15 +14,12 @@ public:
     virtual void draw() const;
     virtual void action(event ev);
 
-    void szinez() const;
-
     bool ures() const;
     void set_tartalma(int _tartalma);
     int get_tartalma() const;
 
 protected:
     int tartalma=0;
-    bool kiemelt=false;
 
 private:
 };

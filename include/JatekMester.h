@@ -13,14 +13,18 @@ public:
     virtual ~JatekMester();
 
     void valt();
+    void vizsgal(int i, int j);
     void xelt(int i, int j);
     void jatek_indit();
 
 protected:
-    int sor, oszlop;
-    int soron_kovetkezo=-1;
 
 private:
+    int sor, oszlop;
+    int soron_kovetkezo=-1;
+    bool vege_a_jateknak=false;
+    int teli_mezok_szama=0;
+
     Kepernyo* kepernyo;
 };
 

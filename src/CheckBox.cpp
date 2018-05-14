@@ -56,19 +56,6 @@ void CheckBox::action(event ev)
 
 }
 
-void CheckBox::szinez() const
-{
-    if(kiemelt)
-    {
-        gout << color(0,0,255);
-    }
-
-    else
-    {
-        gout << color(255,255,255);
-    }
-}
-
 bool CheckBox::ures() const
 {
     return tartalma == 0;

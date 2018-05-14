@@ -14,9 +14,16 @@ protected:
     int sx,sy;
     int id;
 
+    bool kiemelt=false;
 
 public:
+    Widget();
     Widget(int _x, int _y, int _sx, int _sy, int _id);
+
+    void atmeretez(int _x, int _y, int _sx, int _sy, int _id);
+
+    void szinez() const;
+    void kiemel(bool _kiemel);
 
     void focus(event ev);
 

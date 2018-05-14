@@ -6,7 +6,6 @@ using namespace genv;
 
 Kepernyo::Kepernyo(int _sor, int _oszlop, JatekMester& _jm) : sor(_sor), oszlop(_oszlop), jm(_jm)
 {
-
     // tablazat meretei
     x = margo_x;
     y = margo_y;
@@ -18,6 +17,9 @@ Kepernyo::Kepernyo(int _sor, int _oszlop, JatekMester& _jm) : sor(_sor), oszlop(
     YY = sy + margo_x + margo_y;
 
     gout.open(XX,YY);
+
+    szovegdoboz.atmeretez(margo_x,margo_x,XX-2*margo_x,szovegdoboz_magassag,0);
+    uzend("Kezdodhet a jatek, a kor kezd!");
 
     jatekter.resize(sor);
     for(int i=0; i<sor; i++)
@@ -61,6 +63,27 @@ void Kepernyo::klikk_esemeny(event ev)
         jm.xelt(i,j);
         gout << refresh;
     }
+}
+
+vector<CheckBox*> Kepernyo::mezok_irany_szerint(int i, int j, int irany_i, int irany_j)
+{
+    vector<CheckBox*> ret;
+    for (int k = -4; k <= 4; k++)
+    {
+        int ii = i + k*irany_i;
+        int jj = j + k*irany_j;
+        if (0 <= ii && ii < sor && 0 <= jj && jj <= oszlop)
+        {
+            ret.push_back(&jatekter[ii][jj]);
+        }
+    }
+    return ret;
+}
+
+void Kepernyo::uzend(const string& uzenet)
+{
+    szovegdoboz.set_szoveg(uzenet);
+    szovegdoboz.draw();
 }
 
 int Kepernyo::get_tartalma(int i, int j) const

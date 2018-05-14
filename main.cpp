@@ -2,7 +2,7 @@
 
 int main()
 {
-    JatekMester jm(10,10);
+    JatekMester jm(15,15);
     jm.jatek_indit();
     return 0;
 }
