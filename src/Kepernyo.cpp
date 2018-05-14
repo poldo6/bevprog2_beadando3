@@ -1,6 +1,13 @@
 #include "Kepernyo.h"
 #include <iostream>
 
+#include "InputBox.h"
+#include "InputPasswordBox.h"
+#include "SpinBox.h"
+#include "LegorduloMenu.h"
+#include "segedfuggvenyek.h"
+#include "NyomoGomb.h"
+
 using namespace std;
 using namespace genv;
 
@@ -28,7 +35,7 @@ Kepernyo::Kepernyo(int _sor, int _oszlop, JatekMester& _jm) : sor(_sor), oszlop(
         {
             CheckBox cb(margo_x+cb_meret*j,margo_y+cb_meret*i,cb_meret,cb_meret,i*sor+j);
             jatekter[i].push_back(cb);
-            cb.draw();
+            cb.rajzol();
         }
     }
     gout << refresh;
@@ -48,6 +55,78 @@ void Kepernyo::main()
         {
             klikk_esemeny(ev);
         }
+    }
+}
+
+void Kepernyo::main_regi()
+{
+    vector<Widget*> widgets;
+
+    InputBox* ib = new InputBox(20, 20, 200, 30);
+    ib->alapertelmezett_szoveg("Alapertelmezett szoveg");
+
+    InputBox* ipb = new InputPasswordBox(20, 80, 200, 30);
+    ipb->alapertelmezett_szoveg("Password");
+
+    SpinBox* sb = new SpinBox(20,120,200,20);
+    sb->alapertelmezett_szam(100);
+
+    NyomoGomb* nyg = new NyomoGomb(60,210,100,50);
+//    nyg->alapertelmezett_szoveg("Gomb");
+
+
+    LegorduloMenu * menu = new LegorduloMenu(20,180,200,20);
+    menu->uj_item_hozzaad("elso valasztas");
+    menu->uj_item_hozzaad("masodik valasztas");
+    menu->uj_item_hozzaad("harmadik valasztas");
+
+    widgets.push_back(ib);
+    widgets.push_back(ipb);
+    widgets.push_back(sb);
+    widgets.push_back(menu);
+    widgets.push_back(nyg);
+
+    // Mielott barmit is rajzolnank, toroljunk mindent
+    torol_szurke(XX,YY);
+    for (int i=0; i<widgets.size(); i++)
+    {
+        widgets[i]->rajzol();
+    }
+    gout << refresh;
+
+    event ev;
+    int aktiv_idx = -1;
+    while(gin >> ev )
+    {
+        if (ev.type == ev_mouse && ev.button==btn_left)
+        {
+            // Megkeresem azt a widgetet amire ra kattintottam
+            aktiv_idx = -1;
+            for (size_t i=0; i<widgets.size(); i++)
+            {
+                if (widgets[i]->raklikkeltem(ev.pos_x, ev.pos_y))
+                {
+                    aktiv_idx = i;
+                }
+            }
+        }
+
+        // Ha tortent valamelyik widgetra bal kattintas, akkor az kezelje a tovabbi esemenyeket
+        // addig amig valamelyik mas widget nem aktivalodik
+
+        if (aktiv_idx!=-1)
+        {
+            widgets[aktiv_idx]->kezeld_az_esemenyt(ev);
+        }
+
+        // Torlok mindent
+
+        torol_szurke(XX,YY);
+        for (int i=0; i<widgets.size(); i++)
+        {
+            widgets[i]->rajzol();
+        }
+        gout << refresh;
     }
 }
 
@@ -83,7 +162,7 @@ vector<CheckBox*> Kepernyo::mezok_irany_szerint(int i, int j, int irany_i, int i
 void Kepernyo::uzend(const string& uzenet)
 {
     szovegdoboz.set_szoveg(uzenet);
-    szovegdoboz.draw();
+    szovegdoboz.rajzol();
 }
 
 int Kepernyo::get_tartalma(int i, int j) const

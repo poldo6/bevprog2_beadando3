@@ -19,7 +19,7 @@ void TextBox::set_szoveg(const string& _szoveg)
     szoveg = _szoveg;
 }
 
-void TextBox::draw() const
+void TextBox::rajzol() const
 {
     szinez();
     gout << move_to(x,y) << box(sx,sy);
@@ -30,6 +30,6 @@ void TextBox::draw() const
     gout << move_to(x + bekezdes, y + sy/2 + 1 + szoveg_magassag) << text(szoveg);
 }
 
-void TextBox::action(event ev)
+void TextBox::kezeld_az_esemenyt(event ev)
 {
 }

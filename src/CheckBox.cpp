@@ -14,7 +14,7 @@ CheckBox::~CheckBox()
     //dtor
 }
 
-void CheckBox::draw() const
+void CheckBox::rajzol() const
 {
     szinez();
     gout << move_to(x,y) << box(sx,sy);
@@ -44,7 +44,7 @@ void CheckBox::draw() const
     }
 }
 
-void CheckBox::action(event ev)
+void CheckBox::kezeld_az_esemenyt(event ev)
 {
 
 }
@@ -57,7 +57,7 @@ bool CheckBox::ures() const
 void CheckBox::set_tartalma(int _tartalma)
 {
     tartalma=_tartalma;
-    draw();
+    rajzol();
 }
 
 int CheckBox::get_tartalma() const

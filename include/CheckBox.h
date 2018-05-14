@@ -8,8 +8,8 @@ public:
     CheckBox(int _x, int _y, int _sx, int _sy, int _id);
     virtual ~CheckBox();
 
-    virtual void draw() const;
-    virtual void action(genv::event ev);
+    virtual void rajzol() const;
+    virtual void kezeld_az_esemenyt(genv::event ev);
 
     bool ures() const;
     void set_tartalma(int _tartalma);

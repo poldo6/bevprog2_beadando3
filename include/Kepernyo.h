@@ -17,6 +17,7 @@ public:
     virtual ~Kepernyo();
 
     void main();
+    void main_regi();
     void klikk_esemeny(genv::event ev);
     void set_jatekmester(JatekMester& _jm);
 

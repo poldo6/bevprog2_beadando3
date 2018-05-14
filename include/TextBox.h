@@ -16,8 +16,8 @@ public:
 
     void set_szoveg(const string& _szoveg);
 
-    virtual void draw() const;
-    virtual void action(genv::event ev);
+    virtual void rajzol() const;
+    virtual void kezeld_az_esemenyt(genv::event ev);
 
 protected:
     string szoveg;
