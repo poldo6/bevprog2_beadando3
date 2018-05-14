@@ -17,7 +17,7 @@ Extra pont lehetőségek: gépi játékos. [NINCS]
 
 int main()
 {
-    JatekMester jm(15,15);
+    JatekMester jm(15,30);
     jm.jatek_indit();
     return 0;
 }
