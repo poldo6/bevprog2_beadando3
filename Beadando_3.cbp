@@ -13,6 +13,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="include" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -24,6 +25,7 @@
 					<Add option="-fexpensive-optimizations" />
 					<Add option="-O2" />
 					<Add option="-g" />
+					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -43,7 +45,33 @@
 			<Add library="lib/libSDLmain.a" />
 			<Add directory="lib" />
 		</Linker>
+		<Unit filename="include/BillentyuMegfigyelo.h" />
+		<Unit filename="include/CheckBox.h" />
+		<Unit filename="include/InputBox.h" />
+		<Unit filename="include/InputPasswordBox.h" />
+		<Unit filename="include/JatekMester.h" />
+		<Unit filename="include/JatekMester.h" />
+		<Unit filename="include/Kepernyo.h" />
+		<Unit filename="include/LegorduloMenu.h" />
+		<Unit filename="include/NyomoGomb.h" />
+		<Unit filename="include/SpinBox.h" />
+		<Unit filename="include/TextBox.h" />
+		<Unit filename="include/Widget.h" />
+		<Unit filename="include/graphics.hpp" />
+		<Unit filename="include/segedfuggvenyek.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/BillentyuMegfigyelo.cpp" />
+		<Unit filename="src/CheckBox.cpp" />
+		<Unit filename="src/InputBox.cpp" />
+		<Unit filename="src/InputPasswordBox.cpp" />
+		<Unit filename="src/JatekMester.cpp" />
+		<Unit filename="src/Kepernyo.cpp" />
+		<Unit filename="src/LegorduloMenu.cpp" />
+		<Unit filename="src/NyomoGomb.cpp" />
+		<Unit filename="src/SpinBox.cpp" />
+		<Unit filename="src/TextBox.cpp" />
+		<Unit filename="src/Widget.cpp" />
+		<Unit filename="src/segedfuggvenyek.cpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />

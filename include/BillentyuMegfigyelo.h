@@ -8,19 +8,19 @@ using namespace std;
 
 class BillentyuMegfigyelo
 {
-    public:
-        BillentyuMegfigyelo();
-        virtual ~BillentyuMegfigyelo();
+public:
+    BillentyuMegfigyelo();
+    virtual ~BillentyuMegfigyelo();
 
-        void esemenyt_bejelent(event ev);
+    void esemenyt_bejelent(event ev);
 
-        char utolso_character();
+    char utolso_character();
 
-    protected:
+protected:
 
-    private:
-        bool shift = 0;
-        char character;
+private:
+    bool shift = 0;
+    char character;
 };
 
 bool ertelmes_charactere(int keycode);

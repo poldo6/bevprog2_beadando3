@@ -9,17 +9,17 @@ using namespace genv;
 
 class InputPasswordBox : public InputBox
 {
-    private:
+private:
 
-    protected:
+protected:
 
-    public:
-        InputPasswordBox();
-        InputPasswordBox(int x, int y, int szel, int hossz);
-        virtual ~InputPasswordBox();
+public:
+    InputPasswordBox();
+    InputPasswordBox(int x, int y, int szel, int hossz);
+    virtual ~InputPasswordBox();
 
-        virtual string get_szoveg();
-        virtual string konzolrakiir();
+    virtual string get_szoveg();
+    virtual string konzolrakiir();
 
 };
 
